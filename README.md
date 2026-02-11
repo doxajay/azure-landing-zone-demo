@@ -1,12 +1,12 @@
-🏛 Azure Enterprise Landing Zone
+# Azure Enterprise Landing Zone
 
-Repository: azure-landing-zone-demo
+#Repository: azure-landing-zone-demo
 
-Executive Summary
+#Executive Summary
 
 This repository demonstrates the design and implementation of a secure, enterprise-grade Azure Landing Zone, built entirely using Terraform (Infrastructure as Code).
 
-The architecture aligns with:
+#The architecture aligns with:
 
 Microsoft Cloud Adoption Framework (CAF)
 
@@ -20,7 +20,9 @@ Platform Engineering operating model
 
 This project reflects how a cloud platform team would establish a secure, scalable, multi-subscription foundation for enterprise workloads.
 
-🎯 Architectural Intent
+
+
+#🎯 Architectural Intent
 
 The goal of this landing zone is to:
 
@@ -38,9 +40,9 @@ Enable private connectivity to PaaS services
 
 Create a repeatable, scalable enterprise cloud foundation
 
-This is not just infrastructure provisioning — this is platform design.
+#This is not just infrastructure provisioning — this is platform design.
 
-🧱 Architectural Domains Implemented
+#🧱 Architectural Domains Implemented
 1️⃣ Governance & Organizational Structure
 
 Management Group hierarchy
