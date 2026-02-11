@@ -24,7 +24,7 @@ resource "azurerm_policy_definition" "require_tags" {
 }
 
 resource "azurerm_management_group_policy_assignment" "require_tags" {
-  name                 = "${var.prefix}-require-tags-assignment"
+  name                 = "alz-reqtags-mg" # <= 24 chars
   management_group_id  = var.management_group_id
   policy_definition_id = azurerm_policy_definition.require_tags.id
 
