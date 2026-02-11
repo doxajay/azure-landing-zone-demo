@@ -1,24 +1,15 @@
-variable "prefix" {
-  type        = string
-  description = "Naming prefix for resources"
-}
-
-variable "location" {
-  type        = string
-  description = "Azure region for resources"
-}
-
-variable "environment" {
-  type        = string
-  description = "Environment name (dev/test/prod)"
-}
+variable "prefix" { type = string }
+variable "location" { type = string }
+variable "environment" { type = string }
 
 variable "hub_address_space" {
   type        = list(string)
-  description = "CIDR(s) for the hub VNet"
+  description = "CIDR(s) for hub vnet"
+  default     = ["10.0.0.0/16"]
 }
 
-variable "spoke_address_spaces" {
-  type        = map(list(string))
-  description = "Map of spoke name => list of CIDR(s)"
+variable "private_endpoints_subnet_prefix" {
+  type        = list(string)
+  description = "CIDR(s) for Private Endpoint subnet"
+  default     = ["10.0.10.0/24"]
 }
