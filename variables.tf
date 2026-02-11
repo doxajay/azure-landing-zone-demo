@@ -1,19 +1,19 @@
-variable "location" {
-  type    = string
-  default = "canadacentral"
+variable "subscription_id" {
+  type        = string
+  description = "Azure Subscription ID where subscription-level resources (like Log Analytics, networking RG/VNet) will be created."
 }
 
 variable "prefix" {
-  type    = string
-  default = "alz"
+  type        = string
+  description = "Naming prefix, e.g. alz, demo, corp"
+}
+
+variable "location" {
+  type        = string
+  description = "Azure region, e.g. canadacentral"
 }
 
 variable "environment" {
-  type    = string
-  default = "prod"
-}
-
-# Your existing subscription id (place it under correct MG)
-variable "subscription_id" {
-  type = string
+  type        = string
+  description = "Environment, e.g. dev, prod"
 }
