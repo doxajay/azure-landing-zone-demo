@@ -8,6 +8,9 @@ resource "azurerm_policy_definition" "require_tags" {
   mode         = "All"
   display_name = "${var.prefix} - Require Tags (owner, environment)"
 
+  # ✅ Make the definition live at the MG scope
+  management_group_id = var.management_group_id
+
   policy_rule = jsonencode({
     if = {
       anyOf = [
@@ -23,6 +26,7 @@ resource "azurerm_policy_definition" "require_tags" {
   })
 }
 
+
 resource "azurerm_management_group_policy_assignment" "require_tags" {
   name                 = "alz-reqtags-mg" # <= 24 chars
   management_group_id  = var.management_group_id
@@ -30,3 +34,4 @@ resource "azurerm_management_group_policy_assignment" "require_tags" {
 
   display_name = "${var.prefix} - Require Tags at MG"
 }
+
