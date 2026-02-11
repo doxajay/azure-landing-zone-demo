@@ -4,10 +4,13 @@ module "management_groups" {
 }
 
 module "policy" {
-  source                = "./modules/policy"
-  prefix                = var.prefix
-  management_group_id   = module.management_groups.platform_mg_id
+  source = "./modules/policy"
+  prefix = var.prefix
+
+  # pass the full resource ID format
+  management_group_id = "/providers/Microsoft.Management/managementGroups/${module.management_groups.platform_mg_id}"
 }
+
 
 module "rbac" {
   source              = "./modules/rbac"
